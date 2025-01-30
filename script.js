@@ -19,16 +19,20 @@ function handleFiles(files) {
 function addImage(file) {
 	const reader = new FileReader();
 	reader.readAsDataURL(file);
-	reader.onload = (e) => {
+	reader.onload = async (e) => {
 		const imageData = e.target.result;
+
 		if (images.includes(imageData)) return;
-		images.push(imageData);
+
+		const fixedImageData = await fixImageOrientation(imageData);
+
+		images.push(fixedImageData);
 
 		const container = document.createElement("div");
 		container.classList.add("image-container");
 
 		const img = document.createElement("img");
-		img.src = imageData;
+		img.src = fixedImageData;
 		img.classList.add("image-thumbnail");
 
 		const removeBtn = document.createElement("button");
@@ -36,13 +40,40 @@ function addImage(file) {
 		removeBtn.classList.add("remove-button");
 		removeBtn.onclick = () => {
 			imagePreview.removeChild(container);
-			images = images.filter((img) => img !== imageData);
+			images = images.filter((img) => img !== fixedImageData);
 		};
 
 		container.appendChild(img);
 		container.appendChild(removeBtn);
 		imagePreview.appendChild(container);
 	};
+}
+
+async function fixImageOrientation(imageData) {
+	return new Promise((resolve) => {
+		const img = new Image();
+		img.src = imageData;
+		img.onload = () => {
+			const canvas = document.createElement("canvas");
+			const ctx = canvas.getContext("2d");
+
+			let width = img.width;
+			let height = img.height;
+
+			if (width > height) {
+				canvas.width = height;
+				canvas.height = width;
+				ctx.rotate(Math.PI / 2);
+				ctx.drawImage(img, 0, -height);
+			} else {
+				canvas.width = width;
+				canvas.height = height;
+				ctx.drawImage(img, 0, 0);
+			}
+
+			resolve(canvas.toDataURL("image/jpeg"));
+		};
+	});
 }
 
 document.getElementById("generate-pdf").addEventListener("click", async () => {
