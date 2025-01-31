@@ -5,8 +5,8 @@
 }
 
 .custom-upload-button {
-	background-color: #007bff;
-	color: white;
+	background-color: #fdba20;
+	color: black;
 	padding: 10px 15px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -14,7 +14,7 @@
 }
 
 .custom-upload-button:hover {
-	background-color: #0056b3;
+	background-color: #f7be39;
 }
 
 #image-preview {
@@ -56,4 +56,46 @@
 	height: 20px;
 	font-size: 12px;
 	cursor: pointer;
+}
+
+body {
+	background-color: white;
+	color: #333;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.logo {
+	width: 150px;
+	height: auto;
+	display: block;
+	margin: 20px auto;
+}
+
+h1 {
+	text-align: center;
+	font-size: 24px;
+	margin-top: 10px;
+}
+
+#generate-pdf {
+	background-color: #fdba20;
+	color: black;
+	padding: 10px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	border: none;
+	margin-top: auto; /* Pushes button to the bottom */
+	margin-bottom: 50px; /* Adds spacing at bottom */
+}
+
+#generate-pdf:hover {
+	background-color: #f7be39; /* Darker blue on hover */
 }
