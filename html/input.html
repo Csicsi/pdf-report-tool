@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"></html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Store, Date & Name Selection</title>
+	<title>Store, Datum & Name Auswahl</title>
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../css/buttons.css">
 	<link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
-	<img src="../images/logo.png" alt="Company Logo" class="logo">
-	<h1>Select Store, Date & Name</h1>
+	<img src="../images/logo.png" alt="Firmenlogo" class="logo">
+	<h1>Store, Datum & Name Auswahl</h1>
 	
 	<div class="selection-container">
-		<label for="store-number">Choose a store number:</label>
+		<label for="store-number">Store-Nummer:</label>
 		<select id="store-number">
+			<option value="001">001</option>
+			<option value="004">004</option>
+			<option value="007">007</option>
+			<option value="026">026</option>
+			<option value="027">027</option>
+			<option value="033">033</option>
+			<option value="039">039</option>
+			<option value="075">075</option>
+			<option value="086">086</option>
+			<option value="107">107</option>
+			<option value="147">147</option>
+			<option value="156">156</option>
 			<option value="180">180</option>
-			<option value="181">181</option>
-			<option value="182">182</option>
-			<option value="183">183</option>
+			<option value="194">194</option>
+			<option value="204">204</option>
+			<option value="207">207</option>
+			<option value="226">226</option>
+			<option value="234">234</option>
 		</select>
 		<br><br>
-		<label for="selected-date">Choose a date:</label>
+		<label for="selected-date">Datum:</label>
 		<input type="date" id="selected-date">
 		<br><br>
 		<label for="user-name">Rundgang gemacht mit:</label>
-		<input type="text" id="user-name" placeholder="Enter your name">
+		<input type="text" id="user-name" placeholder="Geben Sie Ihren Namen ein">
 		<br><br>
-		<button class="button" id="proceed">Continue</button>
+		<button class="button" id="proceed">Weiter</button>
 	</div>
 
 	<script>
@@ -37,11 +51,11 @@
 			const userName = document.getElementById("user-name").value.trim();
 
 			if (!selectedDate) {
-				alert("Please select a date before proceeding.");
+				alert("Bitte wählen Sie ein Datum, bevor Sie fortfahren.");
 				return;
 			}
 			if (!userName) {
-				alert("Please enter your name before proceeding.");
+				alert("Bitte geben Sie Ihren Namen ein, bevor Sie fortfahren.");
 				return;
 			}
 
