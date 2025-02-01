@@ -1,6 +1,6 @@
 const CACHE_NAME = "report-tool-cache-v1";
 const STATIC_FILES = [
-    "/",
+    "../",
     "../index.html",
     "../html/input.html",
     "../html/topics.html",
