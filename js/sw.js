@@ -1,17 +1,17 @@
 const CACHE_NAME = "report-tool-cache-v1";
 const STATIC_FILES = [
     "/",
-    "/index.html",
-    "/store-selection.html",
-    "/topics.html",
-    "/upload.html",
-    "/css/base.css",
-    "/css/buttons.css",
-    "/css/topics.css",
-    "/js/topics.js",
-    "/js/script.js",
-    "/icons/icon-192x192.png",
-    "/icons/icon-512x512.png"
+    "../index.html",
+    "../html/input.html",
+    "../html/topics.html",
+    "../html/upload.html",
+    "../css/base.css",
+    "../css/buttons.css",
+    "../css/topics.css",
+    "/topics.js",
+    "/script.js",
+    "../icons/icon-128x128.png",
+    "../icons/icon-512x512.png"
 ];
 
 // Install Service Worker & Cache Files
