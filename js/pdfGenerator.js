@@ -27,6 +27,18 @@ export async function generatePDF(images) {
 		pdf.text("Datum: " + selectedDate, 20, 70);
 		pdf.text("Rundgang gemacht mit: " + userName, 20, 80);
 
+		pdf.setFontSize(14);
+		pdf.text("Relevante Themen:", 20, 90);
+
+		const topics = JSON.parse(sessionStorage.getItem("topics")) || [];
+		let yOffset = 100;
+
+		pdf.setFontSize(12);
+		topics.forEach(topic => {
+			pdf.text("• " + topic, 25, yOffset);
+			yOffset += 8;
+		});
+
 		drawBorder(pdf);
 	};
 

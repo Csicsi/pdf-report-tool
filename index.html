@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./css/base.css">
 	<link rel="stylesheet" href="./css/buttons.css">
 	<link rel="stylesheet" href="./css/homepage.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#fdba20">
 </head>
 <body>
     <div class="homepage-container">
@@ -14,5 +16,12 @@
         <h1>Report Tool</h1>
         <button class="button" onclick="location.href='./html/input.html'">Report erstellen</button>
     </div>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./js/sw.js")
+                .then(() => console.log("Service Worker Registered"))
+                .catch(error => console.log("Service Worker Registration Failed:", error));
+        }
+    </script>
 </body>
 </html>
