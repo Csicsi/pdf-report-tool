@@ -5,23 +5,23 @@ A **Progressive Web App (PWA)** for creating **PDF-based reports** with images, 
 ---
 
 ## 🚀 Features
-✅ Step-by-step report creation
-✅ Select store number, date, and responsible person
-✅ Add relevant topics for discussion
-✅ Upload images for documentation
-✅ Generate structured PDF reports
-✅ Installable as a **PWA** (Android, iOS, Desktop)
-✅ Offline support using **Service Workers**
+✅ Step-by-step report creation  
+✅ Select store number, date, and responsible person  
+✅ Add relevant topics for discussion  
+✅ Upload images for documentation  
+✅ Generate structured PDF reports  
+✅ Installable as a **PWA** (Android, iOS, Desktop)  
+✅ Offline support using **Service Workers**  
 
 ---
 
 ## 📸 How It Works
 
-1️⃣ **Select Store & Date** → Choose the store number and inspection date.
-2️⃣ **Enter Responsible Person** → Add the name of the person conducting the report.
-3️⃣ **Add Relevant Topics** → Enter bullet points for key discussion points.
-4️⃣ **Upload Images** → Attach images related to the report.
-5️⃣ **Generate PDF** → A well-structured PDF is created, ready for sharing or printing.
+1️⃣ **Select Store & Date** → Choose the store number and inspection date.  
+2️⃣ **Enter Responsible Person** → Add the name of the person conducting the report.  
+3️⃣ **Add Relevant Topics** → Enter bullet points for key discussion points.  
+4️⃣ **Upload Images** → Attach images related to the report.  
+5️⃣ **Generate PDF** → A well-structured PDF is created, ready for sharing or printing.  
 
 ---
 
