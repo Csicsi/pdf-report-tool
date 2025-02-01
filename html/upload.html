@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PDF Web App</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/buttons.css">
+	<link rel="stylesheet" href="../css/upload.css">
+	<link rel="stylesheet" href="../css/thumbnails.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+	<img src="../images/logo.png" alt="Company Logo" class="logo">
+	<h1>PDF Generator</h1>
+	<h2 id="selected-store">Store: </h2>
+	<h2 id="selected-date">Date: </h2>
+	<h2 id="user-name">Name: </h2>
+	<div class="upload-container">
+		<label for="file-input" class="button">+ Add Images</label>
+		<input type="file" id="file-input" accept="image/*" multiple hidden>
+	</div>
+	<div id="image-preview"></div>
+	<button class="button" id="generate-pdf">Generate PDF</button>
+	<script>
+		const storeNumber = sessionStorage.getItem("selectedStore");
+		const selectedDate = sessionStorage.getItem("selectedDate");
+		const userName = sessionStorage.getItem("userName");
+	
+		if (storeNumber) {
+			document.getElementById("selected-store").innerText = "Store: " + storeNumber;
+		} else {
+			window.location.href = "input.html";
+		}
+	
+		if (selectedDate) {
+			document.getElementById("selected-date").innerText = "Date: " + selectedDate;
+		}
+	
+		if (userName) {
+			document.getElementById("user-name").innerText = "Rundgang gemacht mit: " + userName;
+		}
+	</script>
+	<script src="../js/script.js"></script>
+</body>
+</html>

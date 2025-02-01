@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Store, Date & Name Selection</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/buttons.css">
+	<link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+	<img src="../images/logo.png" alt="Company Logo" class="logo">
+	<h1>Select Store, Date & Name</h1>
+	
+	<div class="selection-container">
+		<label for="store-number">Choose a store number:</label>
+		<select id="store-number">
+			<option value="180">180</option>
+			<option value="181">181</option>
+			<option value="182">182</option>
+			<option value="183">183</option>
+		</select>
+		<br><br>
+		<label for="selected-date">Choose a date:</label>
+		<input type="date" id="selected-date">
+		<br><br>
+		<label for="user-name">Rundgang gemacht mit:</label>
+		<input type="text" id="user-name" placeholder="Enter your name">
+		<br><br>
+		<button class="button" id="proceed">Continue</button>
+	</div>
+
+	<script>
+		document.getElementById("proceed").addEventListener("click", () => {
+			const selectedStore = document.getElementById("store-number").value;
+			const selectedDate = document.getElementById("selected-date").value;
+			const userName = document.getElementById("user-name").value.trim();
+
+			if (!selectedDate) {
+				alert("Please select a date before proceeding.");
+				return;
+			}
+			if (!userName) {
+				alert("Please enter your name before proceeding.");
+				return;
+			}
+
+			sessionStorage.setItem("selectedStore", selectedStore);
+			sessionStorage.setItem("selectedDate", selectedDate);
+			sessionStorage.setItem("userName", userName);
+
+			window.location.href = "upload.html";
+		});
+	</script>
+</body>
+</html>
