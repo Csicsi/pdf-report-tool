@@ -73,10 +73,7 @@ Then open: http://localhost:8080/
 ## 🎯 To-Do & Future Features
 
 - Improve **UI** for better user experience
-- Add **cloud storage support** (Google Drive, Dropbox)
 - Enhance **PDF formatting and layout** options
-- **Multi-language support** (English, German, Hungarian, etc.)
-- Export reports as **Excel/CSV**
 
 ---
 
