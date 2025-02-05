@@ -22,5 +22,13 @@
 	<button class="button" id="proceed">Weiter</button>
 
 	<script src="../js/topics.js"></script>
+	<footer>
+		<p>© <span id="year"></span> <a href="https://github.com/Csicsi" target="_blank">Daniel Csicsak</a>.
+		<a href="https://github.com/Csicsi/pdf-report-tool" target="_blank">View on GitHub</a>.
+		Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+	</footer>
+	<script>
+		document.getElementById("year").textContent = new Date().getFullYear();
+	</script>
 </body>
 </html>
