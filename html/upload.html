@@ -21,22 +21,6 @@
 	</div>
 	<div id="image-preview"></div>
 	<button class="button" id="generate-pdf">PDF erstellen</button>
-	<script>
-		const storeNumber = sessionStorage.getItem("selectedStore");
-		const selectedDate = sessionStorage.getItem("selectedDate");
-		const userName = sessionStorage.getItem("userName");
-		if (storeNumber) {
-			document.getElementById("selected-store").innerText = "Store: " + storeNumber;
-		} else {
-			window.location.href = "input.html";
-		}
-		if (selectedDate) {
-			document.getElementById("selected-date").innerText = "Date: " + selectedDate;
-		}
-		if (userName) {
-			document.getElementById("user-name").innerText = "Rundgang gemacht mit: " + userName;
-		}
-	</script>
 	<script src="../js/script.js"></script>
 	<footer>
 		<p>© <span id="year"></span> <a href="https://github.com/Csicsi" target="_blank">Daniel Csicsak</a>.

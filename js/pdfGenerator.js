@@ -103,6 +103,36 @@ function addCoverPage(pdf) {
 	drawBorder(pdf);
 };
 
+function addChecklist(pdf) {
+	pdf.setFontSize(14);
+	pdf.text("Checkliste:", 20, 20);
+	pdf.setFontSize(12);
+
+	const addCheckbox = (name, x, y) => {
+		const field = new pdf.AcroFormCheckBox();
+		field.fieldName = name;
+		field.Rect = [x, y, 10, 10];
+		pdf.addField(field);
+	};
+
+	const checklistItems = [
+		"Test 1", "Test 2", "Test 3", "Test 4", "Test 5",
+		"Test 6", "Test 7", "Test 8", "Test 9", "Test 10"
+	];
+
+	let yOffset = 30;
+	checklistItems.forEach((item, index) => {
+		pdf.text(item, 20, yOffset);
+		addCheckbox(`yes_${index + 1}`, 100, yOffset - 5);
+		pdf.text("Ja", 115, yOffset);
+		addCheckbox(`no_${index + 1}`, 140, yOffset - 5);
+		pdf.text("Nein", 155, yOffset);
+		yOffset += 15;
+	});
+
+	drawBorder(pdf);
+}
+
 export async function generatePDF(images) {
 	if (images.length === 0) {
 		alert("Bitte fügen Sie mindestens ein Bild hinzu.");
@@ -111,6 +141,8 @@ export async function generatePDF(images) {
 	const { jsPDF } = window.jspdf;
 	const pdf = new jsPDF();
 	addCoverPage(pdf);
+	pdf.addPage();
+	addChecklist(pdf);
 	pdf.addPage();
 	for (let i = 0; i < images.length; i++) {
 		await addImagePage(pdf, images[i]);
