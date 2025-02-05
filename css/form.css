@@ -1,46 +1,106 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: white;
+	color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
 .selection-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-    margin: auto;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	background: #fff;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+	width: 90%;
+	max-width: 400px;
+	min-height: 60vh;
+	display: flex;
+	justify-content: center;
 }
 
 .selection-container label {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
 }
 
 .selection-container select,
 .selection-container input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    transition: 0.3s;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	outline: none;
+	transition: 0.3s;
 }
 
 .selection-container select:focus,
 .selection-container input:focus {
-    border-color: #fdba20;
-    box-shadow: 0 0 5px rgba(253, 186, 32, 0.5);
+	border-color: #fdba20;
+	box-shadow: 0 0 5px rgba(253, 186, 32, 0.5);
 }
 
 .selection-container input::placeholder {
-    color: #aaa;
+	color: #aaa;
 }
 
 .button {
-    width: 100%;
-    margin-top: 10px;
+	width: 100%;
+	margin-top: 10px;
+}
+
+@media (max-height: 800px) {
+	.selection-container {
+		min-height: 50vh;
+		padding: 10px;
+		gap: 8px;
+	}
+
+	.selection-container label {
+		font-size: 14px;
+	}
+
+	.selection-container select,
+	.selection-container input {
+		font-size: 14px;
+		padding: 8px;
+	}
+
+	.button {
+		font-size: 14px;
+		padding: 10px;
+	}
+}
+
+@media (max-height: 600px) {
+	.selection-container {
+		min-height: 45vh;
+		padding: 8px;
+		gap: 6px;
+	}
+
+	.selection-container label {
+		font-size: 13px;
+	}
+
+	.selection-container select,
+	.selection-container input {
+		font-size: 13px;
+		padding: 6px;
+	}
+
+	.button {
+		font-size: 13px;
+		padding: 8px;
+	}
 }

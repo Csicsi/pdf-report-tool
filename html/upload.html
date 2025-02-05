@@ -15,9 +15,6 @@
 <body>
 	<img src="../images/logo.png" alt="Company Logo" class="logo">
 	<h1>PDF Generator</h1>
-	<h2 id="selected-store">Store: </h2>
-	<h2 id="selected-date">Datum: </h2>
-	<h2 id="user-name">Name: </h2>
 	<div class="upload-container">
 		<label for="file-input" class="button">+ Bilder hinzufügen</label>
 		<input type="file" id="file-input" accept="image/*" multiple hidden>
@@ -28,17 +25,14 @@
 		const storeNumber = sessionStorage.getItem("selectedStore");
 		const selectedDate = sessionStorage.getItem("selectedDate");
 		const userName = sessionStorage.getItem("userName");
-
 		if (storeNumber) {
 			document.getElementById("selected-store").innerText = "Store: " + storeNumber;
 		} else {
 			window.location.href = "input.html";
 		}
-
 		if (selectedDate) {
 			document.getElementById("selected-date").innerText = "Date: " + selectedDate;
 		}
-
 		if (userName) {
 			document.getElementById("user-name").innerText = "Rundgang gemacht mit: " + userName;
 		}
